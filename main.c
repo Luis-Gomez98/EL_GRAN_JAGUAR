@@ -100,6 +100,71 @@ int main(void)
 
     while(1)
     {
+        while(UARTCharsAvail(UART0_BASE)){
+                    str = UARTCharGet(UART0_BASE);
+                    }
 
+        if ((str == 'S')){
+            GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, 255); //EN
+
+            if (x == 0){
+                UARTprintf("00001010\n");
+                UARTprintf("00001010\n");
+                GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_1, 255); //Reset en 1
+                delayUs(1);
+                GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_1, 0); //Reset en 0
+                GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_2, 0); //Select en 00
+                GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_3, 0);
+            }else if (x == 3537){ //Cuando termine de desplegar el primer texto, se activa un reset y el select cambia a 1
+                UARTprintf("00001010\n");
+                UARTprintf("00001010\n");
+                GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_1, 255); //Reset en 1
+                delayUs(1);
+                GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_1, 0); //Reset en 0
+                GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_2, 0); //Select en 01
+                GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_3, 255);
+            }else if (x == 6930){ //Cuando termine de desplegar ambos textos, se activa un reset y el select cambia a 0
+                UARTprintf("00001010\n");
+                UARTprintf("00001010\n");
+                GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_1, 255); //Reset en 1
+                delayUs(1);
+                GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_1, 0); //Reset en 0
+                GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_2, 0); //Select en 00
+                GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_3, 0);
+                x = 0;
+            }
+
+
+            //Leer datos
+            BUSDATOS[0] = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_7);
+            BUSDATOS[1] = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_6);
+            BUSDATOS[2] = GPIOPinRead(GPIO_PORTA_BASE, GPIO_PIN_5);
+            BUSDATOS[3] = GPIOPinRead(GPIO_PORTB_BASE, GPIO_PIN_4);
+            BUSDATOS[4] = GPIOPinRead(GPIO_PORTE_BASE, GPIO_PIN_5);
+            BUSDATOS[5] = GPIOPinRead(GPIO_PORTE_BASE, GPIO_PIN_4);
+            BUSDATOS[6] = GPIOPinRead(GPIO_PORTB_BASE, GPIO_PIN_1);
+            BUSDATOS[7] = GPIOPinRead(GPIO_PORTB_BASE, GPIO_PIN_0);
+            ring_o = GPIOPinRead(GPIO_PORTF_BASE, GPIO_PIN_1);
+
+            UARTprintf("%i%i%i%i%i%i%i%i\n", BUSDATOS[7],BUSDATOS[6],BUSDATOS[5],BUSDATOS[4],BUSDATOS[3],BUSDATOS[2],BUSDATOS[1],BUSDATOS[0]);
+
+
+            GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_2, 0); //CLK que entra al FPGA
+            delayMs(7);
+            GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_2, 255);
+            delayMs(7);
+
+            x++;
+        }else if ((str == 'P')){
+            GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_2, 0);
+            GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, 0); //EN
+        }else{
+            GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_2, 0); //CLK que entra al FPGA
+            GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_1, 0); //Reset en 0
+            GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_2, 0); //Select en 00
+            GPIOPinWrite(GPIO_PORTE_BASE, GPIO_PIN_3, 0);
+            GPIOPinWrite(GPIO_PORTD_BASE, GPIO_PIN_3, 0); //EN
+            x = 0;
+        }
     }
 }
