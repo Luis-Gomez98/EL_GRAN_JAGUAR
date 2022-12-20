@@ -7,7 +7,7 @@
  * Luis Ricardo Gómez Velásquez - 18291
  */
 
-//Liberías Utilizadas
+//Librerías Utilizadas
 
 #include <stdint.h>
 #include <stdlib.h>
