@@ -22,7 +22,9 @@ dato = ""
 CADENA_TEXTO = []
 cont = 0
 
-
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+engine.setProperty("rate", 180)
     
     
 serialPort = serial.Serial(port = "COM3", baudrate=115200)
@@ -48,7 +50,21 @@ while(1):
         TEXTO = ''.join(CADENA_TEXTO)
         print(dato,end="")
             
-
+        if (cont == 3539):
+                # print(TEXTO,end="")
+                serialPort.write(bytes(b'P'))
+                engine.setProperty('voice', voices[0].id) #changing index changes voices but ony 0 and 1 are working here
+                engine.say(TEXTO[3:3538])
+                engine.runAndWait()
+                serialPort.write(bytes(b'S'))
+        elif (cont == 6934):
+                # print(TEXTO,end="")
+                serialPort.write(bytes(b'P'))
+                engine.setProperty('voice', voices[1].id) #changing index changes voices but ony 0 and 1 are working here
+                engine.say(TEXTO[3542:6933])
+                engine.runAndWait()
+                serialPort.write(bytes(b'S'))
+                cont = 0
 
 
                      
