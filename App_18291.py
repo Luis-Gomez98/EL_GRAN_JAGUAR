@@ -15,6 +15,7 @@ la aplicación detecte el fin de cada texto de la FSM.
 import serial
 import pyttsx3
 import time
+import sys
 
 BUSDATOS = ""                  # Se utiliza para almacenar datos provenientes del UART
 conv_dec = 0
@@ -32,40 +33,44 @@ time.sleep(2)
 serialPort.write(bytes(b'S'))
     
 while(1):
+
+    try:
     
-    # Wait until there is data waiting in the serial buffer
-    if(serialPort.in_waiting > 0):
-        # Read data out of the buffer until a carraige return / new line is found
-        BUSDATOS = serialPort.readline().decode('UTF-8')
-          
-        #print(BUSDATOS)
-        #print(type(BUSDATOS))
+        # Wait until there is data waiting in the serial buffer
+        if(serialPort.in_waiting > 0):
+            # Read data out of the buffer until a carraige return / new line is found
+            BUSDATOS = serialPort.readline().decode('UTF-8')
+              
+            #print(BUSDATOS)
+            #print(type(BUSDATOS))
 
-        conv_dec = int(BUSDATOS,2)
-        #print('El numero en decimal es: ',conv_dec)
+            conv_dec = int(BUSDATOS,2)
+            #print('El numero en decimal es: ',conv_dec)
 
-        dato = chr(conv_dec)
-        cont = cont + 1
-        CADENA_TEXTO.append(dato)
-        TEXTO = ''.join(CADENA_TEXTO)
-        print(dato,end="")
-            
-        if (cont == 3539):
-                # print(TEXTO,end="")
-                serialPort.write(bytes(b'P'))
-                engine.setProperty('voice', voices[0].id) #changing index changes voices but ony 0 and 1 are working here
-                engine.say(TEXTO[3:3538])
-                engine.runAndWait()
-                serialPort.write(bytes(b'S'))
-        elif (cont == 6934):
-                # print(TEXTO,end="")
-                serialPort.write(bytes(b'P'))
-                engine.setProperty('voice', voices[1].id) #changing index changes voices but ony 0 and 1 are working here
-                engine.say(TEXTO[3542:6933])
-                engine.runAndWait()
-                serialPort.write(bytes(b'S'))
-                cont = 0
-
+            dato = chr(conv_dec)
+            cont = cont + 1
+            CADENA_TEXTO.append(dato)
+            TEXTO = ''.join(CADENA_TEXTO)
+            print(dato,end="")
+                
+            if (cont == 3539):
+                    # print(TEXTO,end="")
+                    serialPort.write(bytes(b'P'))
+                    engine.setProperty('voice', voices[0].id) #changing index changes voices but ony 0 and 1 are working here
+                    engine.say(TEXTO[3:3538])
+                    engine.runAndWait()
+                    serialPort.write(bytes(b'S'))
+            elif (cont == 6934):
+                    # print(TEXTO,end="")
+                    serialPort.write(bytes(b'P'))
+                    engine.setProperty('voice', voices[1].id) #changing index changes voices but ony 0 and 1 are working here
+                    engine.say(TEXTO[3542:6933])
+                    engine.runAndWait()
+                    serialPort.write(bytes(b'S'))
+                    cont = 0
+    except Exception:
+        print("\nInicie de nuevo la aplicación..\n")
+        sys.exit()
 
                      
 
