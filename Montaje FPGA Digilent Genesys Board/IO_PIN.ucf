@@ -1,0 +1,17 @@
+NET "q_out[0]" LOC = "AD11"; //menos significativo
+NET "q_out[1]" LOC = "AD9";
+NET "q_out[2]" LOC = "AM13";
+NET "q_out[3]" LOC = "AM12";
+NET "q_out[4]" LOC = "AD10";
+NET "q_out[5]" LOC = "AE8";
+NET "q_out[6]" LOC = "AF10";
+NET "q_out[7]" LOC = "AJ11"; //más significativo
+NET "clk_s" LOC = "AE9";
+
+NET "select[0]" LOC = "AC8";
+NET "select[1]" LOC = "AB10";
+NET "reset" LOC = "AC9";
+NET "EN" LOC = "AF8";
+
+NET "clk" LOC = "AB8";
+NET "clk" CLOCK_DEDICATED_ROUTE = FALSE;
