@@ -75,3 +75,4 @@ Código UCF para el FPGA Digilent Genesys Board:
 - __[TIVA C](https://github.com/Luis-Gomez98/EL_GRAN_JAGUAR/blob/main/Documentaci%C3%B3n%20extra/pinoutC.jpg)__ - Imagen de los pines que conforman la TIVA C.
 - __[PMOD](https://github.com/Luis-Gomez98/EL_GRAN_JAGUAR/blob/main/Documentaci%C3%B3n%20extra/pmod1.JPG)__ - Imagen del PMOD del FPGA Digilent Genesys Board.
 - __[Pines PMOD](https://github.com/Luis-Gomez98/EL_GRAN_JAGUAR/blob/main/Documentaci%C3%B3n%20extra/pmod_pinouot.JPG)__ - Tabla de nombre de asignación del archivo UCF para los PMODs.
+- __[Artículo Científico](https://github.com/Luis-Gomez98/EL_GRAN_JAGUAR/blob/main/Art%C3%ADculo%20Cient%C3%ADfico/Articulo%20Cient%C3%ADfico%20Tesis.pdf)__ - Artículo Científico en formato IEEE.
