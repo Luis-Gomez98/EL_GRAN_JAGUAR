@@ -49,7 +49,7 @@ Código de la aplicación y sintetizador digital (Python 3):
 
 - __[Proceso de Sintetización y montaje del archivo verilog al FPGA Digilent Genesys Board](https://youtu.be/ttubQtCyglY)__ - Video 4.
 
-- __[Simulación en ISIM.](https://youtu.be/HMclKwUTCZg)(https://youtu.be/42cC32TNNTo)__ - Video 5.
+- __[Simulación en ISIM.](https://youtu.be/HMclKwUTCZg)__ - Video 5.
 
 - __[Explicación de la electrónica externa.](https://youtu.be/I-KUMfvtae4)__ - Video 6.
 
