@@ -1,6 +1,12 @@
 # EL_GRAN_JAGUAR
 Archivo README donde se encuentran videos, códigos, diagrama de conexión y librerías requeridas para el completo funcionamiento de la máquina de estados finito.
 
+## Instalación Python 3:
+
+Se recomienda NO utilizar la versión más reciente porque suelen ser versiones de prueba.
+
+- __[Instalar Python](https://www.python.org/downloads/)__ - Link de instalación. 
+
 ## Librerías requeridas:
 
 Instalación de las librerías utilizadas en Python 3 para `Windows 11` y Distribuciones de `Linux`:
@@ -25,11 +31,11 @@ Distribuciones de Linux:
 
 ## Códigos:
 
-__Código de la electrónica externa (TIVA C):
+Código de la electrónica externa (TIVA C):
 
 - __[main](https://github.com/Luis-Gomez98/EL_GRAN_JAGUAR/blob/main/main.c)__ - Código principal realizado en Code Composer Studio.
 
-__Código de la aplicación y sintetizador digital (Python 3): 
+Código de la aplicación y sintetizador digital (Python 3): 
 
 - __[App_18291](https://github.com/Luis-Gomez98/EL_GRAN_JAGUAR/blob/main/App_18291.py)__ - Código para la aplicación de consola en Python 3. (IMPORTANTE INSTALAR LAS LIBRERÍAS)
 
