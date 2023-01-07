@@ -25,12 +25,31 @@ Distribuciones de Linux:
 
 ## Códigos:
 
-__Código de la electrónica externa (TIVA C): :)__
+__Código de la electrónica externa (TIVA C):
 
 - __[main](https://github.com/Luis-Gomez98/EL_GRAN_JAGUAR/blob/main/main.c)__ - Código principal realizado en Code Composer Studio.
 
-__Código de la aplicación y sintetizador digital (Python 3): :)__
+__Código de la aplicación y sintetizador digital (Python 3): 
 
 - __[App_18291](https://github.com/Luis-Gomez98/EL_GRAN_JAGUAR/blob/main/App_18291.py)__ - Código para la aplicación de consola en Python 3. (IMPORTANTE INSTALAR LAS LIBRERÍAS)
+
+## Videos:
+
+- __[Explicación de creación de Blackboxes](https://youtu.be/-3zbbkzytVc)__ - Video 1.
+
+- __[Creación de programa en ISE Design Suite 14.7](https://youtu.be/HMclKwUTCZg)__ - Video 2.
+
+- __[Importación archivo UCF a ISE Design Suite 14.7](https://youtu.be/HMclKwUTCZg)__ - Video 3.
+
+- __[Proceso de Sintetización y montaje del archivo verilog al FPGA Digilent Genesys Board](https://youtu.be/ttubQtCyglY)__ - Video 4.
+
+- __[Simulación en ISIM.](https://youtu.be/HMclKwUTCZg)(https://youtu.be/42cC32TNNTo)__ - Video 5.
+
+- __[Explicación de la electrónica externa.](https://youtu.be/I-KUMfvtae4)__ - Video 6.
+
+- __[Explicación aplicación de consola en Python 3.](https://youtu.be/klTiH55PLWs)__ - Video 7.
+
+- __[Funcionamiento de El Gran Jaguar.](https://youtu.be/QU9_QRYPk8c)__ - Video 8.
+
 
 
