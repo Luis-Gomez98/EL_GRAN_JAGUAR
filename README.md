@@ -39,6 +39,14 @@ Código de la aplicación y sintetizador digital (Python 3):
 
 - __[App_18291](https://github.com/Luis-Gomez98/EL_GRAN_JAGUAR/blob/main/App_18291.py)__ - Código para la aplicación de consola en Python 3. (IMPORTANTE INSTALAR LAS LIBRERÍAS)
 
+Código de la síntesis lógica con los blackboxes: 
+
+- __[Síntesis Lógica](https://github.com/Luis-Gomez98/EL_GRAN_JAGUAR/blob/main/Montaje%20FPGA%20Digilent%20Genesys%20Board/SL1.v)__ - Código para montar al FPGA Digilent Genesys Board.
+
+Código UCF para el FPGA Digilent Genesys Board: 
+
+- __[UCF](https://github.com/Luis-Gomez98/EL_GRAN_JAGUAR/blob/main/Montaje%20FPGA%20Digilent%20Genesys%20Board/IO_PIN.ucf)__ - Código para asignación de pines en el PMOD del FPGA Digilent Genesys Board.
+
 ## Videos:
 
 - __[Explicación de creación de Blackboxes](https://youtu.be/-3zbbkzytVc)__ - Video 1.
