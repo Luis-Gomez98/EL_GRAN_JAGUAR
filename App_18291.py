@@ -72,5 +72,4 @@ while(1):
         print("\nInicie de nuevo la aplicación..\n")
         sys.exit()
 
-                     
 
